@@ -1,0 +1,153 @@
+{
+    "name": "GameInputs",
+    "maps": [
+        {
+            "name": "NormalGameplay",
+            "id": "2a070d8d-0183-4098-9abf-b21ade570cfd",
+            "actions": [
+                {
+                    "name": "Mouse",
+                    "type": "Value",
+                    "id": "4feb2d58-a8c5-4e57-a201-8bc0d0fd0b53",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "keyboard",
+                    "type": "Value",
+                    "id": "c40416e6-1933-403b-9c00-398c97be5ce1",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "run",
+                    "type": "Button",
+                    "id": "ca629624-ae95-4839-b717-252c052e1853",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "jump",
+                    "type": "Button",
+                    "id": "dc1c7af8-c5bf-4916-bc3e-ac1eb20ee8c8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "fire",
+                    "type": "Button",
+                    "id": "7407b7ce-007d-483d-813a-ab11f9d4ad06",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "04aad737-feab-43d0-9df3-89f88252d2f9",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "InvertVector2(invertX=false)",
+                    "groups": "",
+                    "action": "Mouse",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "4c037742-6e79-47a2-890c-0a47d27c41aa",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "keyboard",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "9e994c69-a041-4c17-849e-77695418a2e2",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "keyboard",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "0b753853-9511-434d-b76c-3f13733d1384",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "keyboard",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "503db016-0101-4d75-9b72-eaedbdcdb017",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "keyboard",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "309f266d-03d1-4065-b0b9-47142c2b401a",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "keyboard",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "0f82a076-cfb3-4dc9-aace-7dd14bc137a1",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "run",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "60ab46c4-a179-425b-b616-62cecc0bda07",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e4f87b10-13e6-494f-97d1-347d870a81e8",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
