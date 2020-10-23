@@ -8,7 +8,7 @@ public class Weapon : MonoBehaviour
 {
     [SerializeField]
     Transform rayOrigin;
-    [SerializeField, Range(0.1f, 15f)]
+    [SerializeField, Range(0.1f, 1000f)]
     float rayLenght;
     [SerializeField]
     Color rayColor = Color.yellow;
@@ -33,7 +33,7 @@ public class Weapon : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(Physics.Raycast(rayOrigin.position, transform.forward, out hit, rayLenght, hitLayer))
+        if(Physics.Raycast(transform.position, transform.forward, out hit, rayLenght, hitLayer))
         {
             targetRb = hit.collider.GetComponent<Rigidbody>();
         }
@@ -43,12 +43,12 @@ public class Weapon : MonoBehaviour
         }    
     }
 
-    public bool IsOnRange => Physics.Raycast(rayOrigin.position, transform.forward, rayLenght, hitLayer);
+    public bool IsOnRange => Physics.Raycast(transform.position, transform.forward, rayLenght, hitLayer);
 
     void OnDrawGizmosSelected() 
     {
         Gizmos.color = rayColor;
-        Gizmos.DrawRay(rayOrigin.position, transform.forward * rayLenght);
+        Gizmos.DrawRay(transform.position, transform.forward * rayLenght);
     }
 
     public void GetShot()

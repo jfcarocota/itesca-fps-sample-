@@ -28,6 +28,8 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     Weapon weapon;
+    
+    float rotationAmountY;
 
     void Awake()
     {
@@ -55,9 +57,15 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        transform.Rotate(Vector3.up * LookAxis.x * rotYspeed * Time.deltaTime); 
+        //transform.Rotate(Vector3.up * LookAxis.x * rotYspeed * Time.deltaTime); 
         cam.Rotate(Vector3.right * LookAxis.y * rotYspeed * Time.deltaTime);
-        transform.Translate(MovementAxis * CheckMoveSpeed(ACTIONS.run.phase) * Time.deltaTime);
+        //transform.Translate(MovementAxis * CheckMoveSpeed(ACTIONS.run.phase) * Time.deltaTime);
+
+        rotationAmountY += LookAxis.x * rotYspeed * Time.deltaTime;
+        rb.rotation = Quaternion.Euler(rb.rotation.x, rotationAmountY, rb.rotation.z);
+        
+        Vector3 forward = rb.rotation * MovementAxis;
+        rb.position += forward * CheckMoveSpeed(ACTIONS.run.phase) * Time.deltaTime;
 
         if(ACTIONS.fire.phase == UnityEngine.InputSystem.InputActionPhase.Started)
         {
